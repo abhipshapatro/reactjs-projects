@@ -1,0 +1,9 @@
+React?
+- open source lib for building user interfaces
+- not a framework
+- component based
+- reusable code
+- declarative - tell react what to build & it will build the actual ui
+
+**spread (...x) - expands an array into its elements
+rest - collects multiple elements and condenses them into a single element
