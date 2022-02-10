@@ -1,25 +1,23 @@
 import { useState } from "react";
 
 const Home = () => {
-
-  // const name = 'isha'
-  const [name , setName] = useState('isha'); //input
-  const [age , setAge] = useState('21');
-
-  const handleClick = () => {
-      setName('abhipsha'); //processing
-      setAge(30);
-  };
-
+    const [blogs , setBlogs] = useState([
+        {title : 'My new website' , body : 'lorem ipsum...' , author : 'isha' , id : 1},
+        {title : 'Blog warming party!' , body : 'lorem ipsum...' , author : 'abhipsha' , id : 2},
+        {title : 'Wevdev tips' , body : 'lorem ipsum...' , author : 'abby' , id : 3}
+    ]);
   return (
     <div className="home">
-      <h2>Home Page</h2>
-      <p>{name}</p> {/* output */}
-      <p>{name} is {age} years old</p>
-      <button onClick={handleClick}>Click me</button>
+      {blogs.map((blog) => (
+          <div className="blog-preview" key={blog.id}>
+              <h2>{blog.title}</h2>
+              <p>Written by : {blog.author}</p>
+          </div>
+      ))}
     </div>
   );
 };
 
 export default Home;
 
+// map() - cycles through the array & can make changes with each item in the array
