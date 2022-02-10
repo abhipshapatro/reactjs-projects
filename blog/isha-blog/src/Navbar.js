@@ -4,7 +4,12 @@ const Navbar = () => {
             <h1>Isha Blogs</h1>
             <div className="links">
                 <a href="/">Home</a>
-                <a href="/create">New Blog</a>
+                {/* inline styling - dynamic value which is an obj with key value pair */}
+                <a href="/create" style={{
+                    color : 'white',
+                    backgroundColor : rgb(197, 102, 102),
+                    borderRadius : '8px'
+                }}>New Blog</a>               
             </div>
         </nav>
     );
