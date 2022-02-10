@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BlogList from "./BlogList";
 
 const Home = () => {
     const [blogs , setBlogs] = useState([
@@ -8,16 +9,14 @@ const Home = () => {
     ]);
   return (
     <div className="home">
-      {blogs.map((blog) => (
-          <div className="blog-preview" key={blog.id}>
-              <h2>{blog.title}</h2>
-              <p>Written by : {blog.author}</p>
-          </div>
-      ))}
+      <BlogList blogs={blogs} title="All Blogs!" />
     </div>
   );
 };
 
 export default Home;
 
-// map() - cycles through the array & can make changes with each item in the array
+
+// props
+// a way to pass data from one component(parent component) to a child component(pass blog data >> into blog list component)
+// by making a property name on bloglist tag 
