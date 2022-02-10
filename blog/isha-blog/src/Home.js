@@ -1,25 +1,25 @@
+import { useState } from "react";
+
 const Home = () => {
 
-    const handleClick = (e) => {
-        console.log("hello peeps", e);
-    }
+  // const name = 'isha'
+  const [name , setName] = useState('isha'); //input
+  const [age , setAge] = useState('21');
 
-    const handleClickAgain = (name , e) => {
-        console.log('hello ' + name , e.target);
-    }
+  const handleClick = () => {
+      setName('abhipsha'); //processing
+      setAge(30);
+  };
 
-    return (
-        <div className="home">
-            <h2>Home Page</h2>
-            <button onClick={handleClick}>Click me</button>
-            <button onClick={(e) =>handleClickAgain('isha' , e)}>Click me again</button>
-        </div>
-    );
-}
- 
+  return (
+    <div className="home">
+      <h2>Home Page</h2>
+      <p>{name}</p> {/* output */}
+      <p>{name} is {age} years old</p>
+      <button onClick={handleClick}>Click me</button>
+    </div>
+  );
+};
+
 export default Home;
 
-// handleClick() will invoke the function direcly
-// so we write just the function name
-// handleClickAgain() cant be invoked directly (reason above)
-// as it is wrapped in an anonymous function which works only when the user clicks on the button 
