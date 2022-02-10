@@ -7,9 +7,10 @@ const Navbar = () => {
                 {/* inline styling - dynamic value which is an obj with key value pair */}
                 <a href="/create" style={{
                     color : 'white',
-                    backgroundColor : rgb(197, 102, 102),
+                    backgroundColor : "#f1356d",
                     borderRadius : '8px'
-                }}>New Blog</a>               
+                }}>New Blog</a>
+               
             </div>
         </nav>
     );
