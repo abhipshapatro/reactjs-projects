@@ -16,4 +16,4 @@ const BlogList = ({blogs ,title , handleDelete}) => {
 
 export default BlogList;
 
-// accepting handleDelete function as a prop
+
