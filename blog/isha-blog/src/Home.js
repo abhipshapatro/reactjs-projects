@@ -7,16 +7,19 @@ const Home = () => {
         {title : 'Blog warming party!' , body : 'lorem ipsum...' , author : 'abhipsha' , id : 2},
         {title : 'Wevdev tips' , body : 'lorem ipsum...' , author : 'abby' , id : 3}
     ]);
+
+    const handleDelete = (id) => {
+        const newBlogs = blogs.filter(blog => blog.id !== id);
+        setBlogs(newBlogs);
+    }
+
   return (
     <div className="home">
-      <BlogList blogs={blogs} title="All Blogs!" />
-      <BlogList blogs={blogs.filter((blog) => blog.author === 'abby' )} title="Abby's blogs" />
+      <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/>
     </div>
   );
 };
 
 export default Home;
 
-
-//filter()
-// can be used for making search pages where the title matches the search item 
+// creating a prop called handleDelete and setting it equal to handleDelete function
