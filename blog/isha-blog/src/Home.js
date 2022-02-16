@@ -2,11 +2,7 @@ import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
-    const [blogs , setBlogs] = useState([
-        {title : 'My new website' , body : 'lorem ipsum...' , author : 'abby' , id : 1},
-        {title : 'Blog warming party!' , body : 'lorem ipsum...' , author : 'abhipsha' , id : 2},
-        {title : 'Wevdev tips' , body : 'lorem ipsum...' , author : 'abby' , id : 3}
-    ]);
+    const [blogs , setBlogs] = useState(null);
 
     const [name , setName] = useState('isha');
 
@@ -15,25 +11,36 @@ const Home = () => {
         setBlogs(newBlogs);
     }
 
+//the link(fetch) returns a promise (then method)
+//once (the promise has resolved) we have a data back >> we get a response obj 
+//to get the data, res.json() passes the json into a js obj
+//now we need to return this value
+//when we return this >> the whole thing now returns another promise coz res.json() is also asyncronous >>
+//another then block which fires a func >> takes a parameter (the actual data)
+
     useEffect(() => {
       console.log('use effect ran');
-      console.log(name)
-    },[name]);
+      fetch('http://localhost:8000/blogs')
+        .then(res => {
+          // passes the json into js obj
+          return res.json();
+        })
+        .then(data => {
+          setBlogs(data)
+        })
+    },[]);
+
+//setBlogs doesnot cause an infinite loop because we have an empty dependency array
 
   return (
     <div className="home">
-      <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/>
-      <button onClick={() => setName('abhipsha')}>change name</button>
-      <p>{ name }</p>
+      {blogs && <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/>}
     </div>
-  );
+  ); 
 };
 
 export default Home;
 
-//npx json-server --watch data/db.json --port 8000 
-// endpoints
-// /blogs               GET         fetch all blogs
-// /blogs/{id}       GET          fetch a single bag
-// /blogs               POST       add a new blog
-// /blogs/{id}       DELETE    delete a blog
+
+//blog is null so it doesnot look at the html part(&&)
+//js
