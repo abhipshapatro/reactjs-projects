@@ -8,19 +8,23 @@ const Home = () => {
         {title : 'Wevdev tips' , body : 'lorem ipsum...' , author : 'abby' , id : 3}
     ]);
 
+    const [name , setName] = useState('isha');
+
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id);
         setBlogs(newBlogs);
     }
 
     useEffect(() => {
-      console.log('use effect ');
-      console.log(blogs);
-    });
+      console.log('use effect ran');
+      console.log(name)
+    },[name]);
 
   return (
     <div className="home">
       <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/>
+      <button onClick={() => setName('abhipsha')}>change name</button>
+      <p>{ name }</p>
     </div>
   );
 };
@@ -28,6 +32,6 @@ const Home = () => {
 export default Home;
 
 
-// useEffect doesnot return anything
-// pass a func as an argument
-// used for fetching data , authentication service(side effects)
+//name is a dependency & it changes when we run the func
+//otherwise if we delete the blog , the func in useEffect doesnot run as it's not a dependency 
+//if we click on the btn again,no more changes (although it is using the setname to change the value,it's abhipsha already)
