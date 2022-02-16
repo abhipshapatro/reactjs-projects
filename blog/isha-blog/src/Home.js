@@ -31,7 +31,9 @@ const Home = () => {
 
 export default Home;
 
-
-//name is a dependency & it changes when we run the func
-//otherwise if we delete the blog , the func in useEffect doesnot run as it's not a dependency 
-//if we click on the btn again,no more changes (although it is using the setname to change the value,it's abhipsha already)
+//npx json-server --watch data/db.json --port 8000 
+// endpoints
+// /blogs               GET         fetch all blogs
+// /blogs/{id}       GET          fetch a single bag
+// /blogs               POST       add a new blog
+// /blogs/{id}       DELETE    delete a blog
