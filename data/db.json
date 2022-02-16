@@ -1,0 +1,16 @@
+{
+    "blogs":[
+        {
+            "title" : "My First Blog" , 
+            "body" : "lorem ipsum..." , 
+            "author" : "abby" , 
+            "id" : 1
+        } ,
+        {
+            "title" : "Opening party!" , 
+            "body" : "lorem ipsum..." , 
+            "author" : "isha" , 
+            "id" : 2  
+        }
+    ]
+}
