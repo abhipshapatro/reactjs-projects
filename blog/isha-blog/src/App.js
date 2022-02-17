@@ -1,6 +1,7 @@
 import Navbar from './Navbar';
 import Home from './Home';
 import { BrowserRouter as Router, Route , Switch } from 'react-router-dom';
+import Create from './Create';
 
 function App() {
   return (
@@ -9,8 +10,11 @@ function App() {
       <Navbar />
       <div className="content">
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/create">
+            <Create />
           </Route>
         </Switch>
       </div>
@@ -20,3 +24,5 @@ function App() {
 }
 
 export default App;
+
+//switch surrounds the route >> makes sure only one route component shows at one time
