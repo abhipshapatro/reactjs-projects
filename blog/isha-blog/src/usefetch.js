@@ -31,5 +31,3 @@ const useFetch = (url) => {
 
 export default useFetch;
 
-//creating a custom hook
-//reusable
