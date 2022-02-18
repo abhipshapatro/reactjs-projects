@@ -3,6 +3,7 @@ import Home from './Home';
 import { BrowserRouter as Router, Route , Switch } from 'react-router-dom';
 import Create from './Create';
 import BlogDetails from './BlogDetails';
+import NotFound from './NotFound';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           <Route path="/blogs/:id">
             <BlogDetails />
           </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
       </div>
     </div>
@@ -29,5 +33,6 @@ function App() {
 
 export default App;
 
-//switch surrounds the route >> makes sure only one route component shows at one time
-// id = name of the route parameter
+//* = catch all routes
+//present at bottom >> coz if none of the routes match then * wil get match regardless and it will go to the 404 page
+//if present at top >> any route might get matched
