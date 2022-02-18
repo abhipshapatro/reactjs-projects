@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("abby");
   const [isPending, setIsPending] = useState(false);
+  const history = useHistory();
+
   
   const handleSubmit = (e) => {
     e.preventDefault(); //stops the page from refresh
@@ -19,6 +22,8 @@ const Create = () => {
     }).then(() => {
         console.log('new blog added')
         setIsPending(false);
+        // history.go(1);
+        history.push('/');
     })
 
   }
