@@ -1,16 +1,40 @@
 {
-    "blogs":[
-        {
-            "title" : "My First Blog" , 
-            "body" : "React's primary goal is to minimize the bugs that occur when developers are building UIs. It does this through the use of components — self-contained, logical pieces of code that describe a portion of the user interface. These components can be composed together to create a full UI, and React abstracts away much of the rendering work, leaving you to concentrate on the UI design." , 
-            "author" : "abby" , 
-            "id" : 1
-        } ,
-        {
-            "title" : "Opening party!" , 
-            "body" : "Unlike the other frameworks covered in this module, React does not enforce strict rules around code conventions or file organization. This allows teams to set conventions that work best for them, and to adopt React in any way they would like to. React can handle a single button, a few pieces of an interface, or an app's entire user interface." , 
-            "author" : "isha" , 
-            "id" : 2  
-        }
-    ]
+  "blogs": [
+    {
+      "title": "My First Blog",
+      "body": "React's primary goal is to minimize the bugs that occur when developers are building UIs. It does this through the use of components — self-contained, logical pieces of code that describe a portion of the user interface. These components can be composed together to create a full UI, and React abstracts away much of the rendering work, leaving you to concentrate on the UI design.",
+      "author": "abby",
+      "id": 1
+    },
+    {
+      "title": "Opening party!",
+      "body": "Unlike the other frameworks covered in this module, React does not enforce strict rules around code conventions or file organization. This allows teams to set conventions that work best for them, and to adopt React in any way they would like to. React can handle a single button, a few pieces of an interface, or an app's entire user interface.",
+      "author": "isha",
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "title": "dvdvgrdg",
+      "body": "htdhs",
+      "author": "isha",
+      "id": 5
+    },
+    {
+      "title": "dvdvgrdg",
+      "body": "htdhs",
+      "author": "isha",
+      "id": 6
+    },
+    {
+      "title": "cc",
+      "body": "vdvdx",
+      "author": "abby",
+      "id": 7
+    }
+  ]
 }
